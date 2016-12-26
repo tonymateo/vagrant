@@ -1,2 +1,4 @@
 \.vagrant
 .gitignore
+privision.sh
+Vagrantfile
