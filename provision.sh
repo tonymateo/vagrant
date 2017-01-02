@@ -1,11 +1,11 @@
+sudo apt-get -y update
 apt-get -y install apache2
 apt-get -y install git
-git clone https://github.com/tonymateo/ej_1e_despliegue.git /var/www/sitio1
-git clone https://github.com/tonymateo/ej_github.git /var/www/sitio2
-git clone https://github.com/tonymateo/vagrant.git /home/vagrant/config
-mv /home/vagrant/config/sitio1.conf /etc/apache2/sites-available/sitio1.conf
-mv /home/vagrant/config/sitio2.conf /etc/apache2/sites-available/sitio2.conf
-a2ensite sitio1.conf
-a2ensite sitio2.conf
-a2enmod vhost_alias
-service apache2 restart
+#Instalando mysql y estableciendo contraseña
+sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password vagrant'
+sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password vagrant'
+sudo apt-get -y install mysql-server libapache2-mod-auth-mysql php5-mysql
+# Instalando php
+sudo apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
+sudo mkdir /var/www/symfony
+git clone https://github.com/tonymateo/gestor_fct.git
