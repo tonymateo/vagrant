@@ -26,9 +26,13 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 80, host: 8080
-  
+
   #config.vm.network "public_network", ip: "192.168.1.3" # Setting up machine's IP Address
 
+  #deshabilito el path por defecto de la carpeta compartida y añado un path mio propio
+  config.vm.synced_folder "C:/Users/franc/Vagrant", "/vagrant", disabled: true
+  config.vm.synced_folder "C:/xampp/htdocs/xampp", "/var/www"
+  
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
