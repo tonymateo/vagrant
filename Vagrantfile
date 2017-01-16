@@ -28,9 +28,10 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8080
   #config.vm.network "public_network", ip: "192.168.1.3" # Setting up machine's IP Address
 
-  #deshabilito el path por defecto de la carpeta compartida y añado un path mio propio
-  config.vm.synced_folder "C:/tools/cygwin/home/tonid/ejerciciosPrueba", "/vagrant", disabled: true
-  config.vm.synced_folder "C:/xampp/htdocs/vagrant/var/www", "/var/www"
+  #ruta donde se haga el clone
+  #config.vm.synced_folder "C:/", "/vagrant", disabled: true
+  #ruta de la carpeta donde se quiera trabajar
+  #config.vm.synced_folder "C:/xampp/htdocs/", "/var/www"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
