@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
 
   #deshabilito el path por defecto de la carpeta compartida y añado un path mio propio
   config.vm.synced_folder "C:/tools/cygwin/home/tonid/ejerciciosPrueba", "/vagrant", disabled: true
-  config.vm.synced_folder "C:/xampp/htdocs/vagrant/var/www", "/var/www"
+  #config.vm.synced_folder "C:/xampp/htdocs/vagrant", "/var/www"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
